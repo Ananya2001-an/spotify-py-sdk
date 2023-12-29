@@ -14,19 +14,20 @@ class SpotifyApi:
         self.access_token_manager: AccessTokenManager = AccessTokenManager(client_id, client_secret)
         self.sdk_config: Optional[SdkConfig] = config
         self.albums: Albums = Albums(self)
-        # self.artists: Artists;
-        # self.audiobooks: Audiobooks;
-        # self.browse: Browse;
-        # self.chapters: Chapters;
-        # self.episodes: Episodes;
-        # self.recommendations: Recommendations;
-        # self.markets: Markets;
-        # self.player: Player;
-        # self.playlists: Playlists;
-        # self.shows: Shows;
-        # self.tracks: Tracks;
-        # self.users: Users;
-        # self.search: SearchExecutionFunction;
+        self.artists: Artists = Artists(self)
+        self.audiobooks: Audiobooks = Audiobooks(self)
+        self.browse: Browse = Browse(self)
+        self.chapters: Chapters = Chapters(self)
+        self.episodes: Episodes = Episodes(self)
+        self.recommendations: Recommendations = Recommendations(self)
+        self.markets: Markets = Markets(self)
+        self.player: Player = Player(self)
+        self.playlists: Playlists = Playlists(self)
+        self.shows: Shows = Shows(self)
+        self.tracks: Tracks = Tracks(self)
+        self.users: Users = Users(self)
+        self.search: Search = Search(self)
+        self.current_user: CurrentUser = CurrentUser(self)
 
     @classmethod
     def fetch_results(cls, url: str, opts: dict):
