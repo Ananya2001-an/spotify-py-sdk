@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "spotify-py-sdk"
 version = "0.1.0"
-description = "Spotify SDK for Python"
+description = "Python SDK for Spotify"
 authors = ["Ananya Nayak <ananyanayak102@gmail.com>"]
 readme = "README.md"
 
