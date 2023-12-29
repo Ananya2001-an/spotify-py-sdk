@@ -10,11 +10,8 @@ class SdkConfig:
         self.fetch = fetch
         self.before_request = before_request
         self.after_request = after_request
-        # self.deserializer = deserializer
         # self.response_validator = response_validator
         # self.error_handler = error_handler
-
-# , deserializer: Optional[IResponseDeserializer] = None, response_validator: Optional[IValidateResponses] = None, error_handler: Optional[IHandleErrors] = None
 
 
 """ API return types """

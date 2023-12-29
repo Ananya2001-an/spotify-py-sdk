@@ -1,6 +1,6 @@
 import json
 import requests
-from typing import List, Optional, Union, Literal
+from typing import Optional, Union, Literal
 from .auth.access_token_manager import AccessTokenManager
 from .types import *
 from requests import HTTPError
