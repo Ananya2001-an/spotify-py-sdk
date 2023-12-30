@@ -1,4 +1,4 @@
-## Python SDK for Spotify (Unofficial)
+## Python SDK for Spotify Web API
 
 > This library is still a work in progress.
 
