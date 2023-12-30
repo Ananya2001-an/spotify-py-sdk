@@ -10,6 +10,7 @@ from .endpoints import *
 class SpotifyApi:
     _root_url: str = "https://api.spotify.com/v1/"
 
+    # using client credentials auth strategy
     def __init__(self, client_id: str, client_secret: str, config: Optional[SdkConfig] = None):
         self.access_token_manager: AccessTokenManager = AccessTokenManager(client_id, client_secret)
         self.sdk_config: Optional[SdkConfig] = config
@@ -21,13 +22,13 @@ class SpotifyApi:
         self.episodes: Episodes = Episodes(self)
         self.recommendations: Recommendations = Recommendations(self)
         self.markets: Markets = Markets(self)
-        self.player: Player = Player(self)
+        # self.player: Player = Player(self)
         self.playlists: Playlists = Playlists(self)
         self.shows: Shows = Shows(self)
         self.tracks: Tracks = Tracks(self)
         self.users: Users = Users(self)
         self.search: Search = Search(self)
-        self.current_user: CurrentUser = CurrentUser(self)
+        # self.current_user: CurrentUser = CurrentUser(self)
 
     @classmethod
     def fetch_results(cls, url: str, opts: dict):

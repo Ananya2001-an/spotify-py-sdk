@@ -15,7 +15,7 @@ class Shows(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"shows{params}")
-        return response.shows
+        return response["shows"]
 
     def episodes(self, id: str, market: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None):
         params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})

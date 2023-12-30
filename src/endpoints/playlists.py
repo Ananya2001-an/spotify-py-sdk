@@ -41,7 +41,7 @@ class Playlists(EndpointsBase):
         params = EndpointsBase.params_for({"market": market, "fields": fields, "additional_types": ",".join(additional_types) if additional_types else None})
         return self.get_request(f"playlists/{playlist_id}{params}")
 
-    def get_playlist_items(self, playlist_id: str, market: Optional[MARKET] = None, fields: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, additional_types: Optional[QueryAdditionalTypes] = None):
+    def get_playlist_items(self, playlist_id: str, market: Optional[MARKET] = None, fields: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, additional_types: Optional[list[QueryAdditionalTypes]] = None):
         params = EndpointsBase.params_for({"market": market, "fields": fields, "limit": limit, "offset": offset, "additional_types": ",".join(
             additional_types) if additional_types else None})
         return self.get_request(f"playlists/{playlist_id}/tracks{params}")

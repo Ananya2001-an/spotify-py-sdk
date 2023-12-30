@@ -16,7 +16,7 @@ class Albums(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"albums{params}")
-        return response.albums
+        return response["albums"]
 
     def tracks(self, album_id: str, market: Optional[MARKET] = None,
                limit: Optional[int] = None, offset: Optional[int] = None):

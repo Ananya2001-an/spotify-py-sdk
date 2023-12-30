@@ -12,6 +12,10 @@ class EndpointsBase:
         for key, value in args.copy().items():
             if value is None:
                 del args[key]
+            elif type(value) is list:
+                args[key] = ",".join(value)
+            elif type(value) is bool:
+                args[key] = "false" if value is False else "true"
         return f"?{urlencode(args)}" if args != {} else ""
 
     def get_request(self, url: str):
