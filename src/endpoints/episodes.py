@@ -16,5 +16,5 @@ class Episodes(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"episodes{params}")
-        return response.episodes
+        return response["episodes"]
 

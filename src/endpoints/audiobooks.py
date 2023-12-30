@@ -15,7 +15,7 @@ class Audiobooks(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"audiobooks{params}")
-        return response.audiobooks
+        return response["audiobooks"]
 
     def get_audiobook_chapters(self, id: str, market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None):
         params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})

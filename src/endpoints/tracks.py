@@ -15,7 +15,7 @@ class Tracks(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"tracks{params}")
-        return response.tracks
+        return response["tracks"]
 
     def audio_features(self, id_or_ids: Union[str, list[str]]):
         if type(id_or_ids) is str:
@@ -23,7 +23,7 @@ class Tracks(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids})
         response = self.get_request(f"audio-features{params}")
-        return response.audio_features
+        return response["audio_features"]
 
     def audio_analysis(self, id: str):
         return self.get_request(f"audio-analysis/{id}")

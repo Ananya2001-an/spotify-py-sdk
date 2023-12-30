@@ -68,6 +68,7 @@ class CurrentUserAudiobooks(EndpointsBase):
         params = EndpointsBase.params_for({"ids": ids})
         return self.get_request(f"me/audiobooks/contains{params}")
 
+
 class CurrentUserEpisodes(EndpointsBase):
     def saved_episodes(self, market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None):
         params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})

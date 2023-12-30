@@ -8,7 +8,7 @@ class Search(EndpointsBase):
     def __init__(self, api):
         super().__init__(api)
 
-    def execute(self, q: str, type: ITEM_TYPES, market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None, include_external: Optional[str] = None):
+    def execute(self, q: str, type: list[ITEM_TYPES], market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None, include_external: Optional[str] = None):
         params = EndpointsBase.params_for({
             "q": q,
             "type": type,

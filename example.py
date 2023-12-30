@@ -1,7 +1,8 @@
-from src import SpotifyApi, SdkConfig
+import os
 
-CLIENT_ID = "Enter your Client ID"
-CLIENT_SECRET = "Enter your Client Secret"
+from src import SpotifyApi, SdkConfig
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def main():
@@ -10,10 +11,10 @@ def main():
     # TODO async/await request
     # config.after_request = lambda x, y, z: print("After request!")
 
-    api: SpotifyApi = SpotifyApi(CLIENT_ID, CLIENT_SECRET, config)
-    # print(api.albums.get("4EcfbzCtbJDk2wMwhT4D1h"))
+    api: SpotifyApi = SpotifyApi(os.getenv("CLIENT_ID"), os.getenv("CLIENT_SECRET"), config)
+    # print(api.albums.get(["4EcfbzCtbJDk2wMwhT4D1h", "4EcfbzCtbJDk2wMwhT4D1h"]))
     # print(api.current_user.followed_artists()) # insufficient client scope;
-    # print(api.search.execute("purpose", "album"))
+    # print(api.search.execute("purpose", ["album"]))
     # print(api.browse.get_categories())
 
 

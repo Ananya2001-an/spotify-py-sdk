@@ -16,4 +16,4 @@ class Chapters(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"chapters{params}")
-        return response.chapters
+        return response["chapters"]

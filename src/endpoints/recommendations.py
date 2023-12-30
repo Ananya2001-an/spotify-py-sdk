@@ -5,7 +5,7 @@ from src.types import *
 
 
 class RecommendationsRequestRequiredArguments:
-    def __init__(self, seed_artists: Optional[str] = None, seed_genres: Optional[str] = None, seed_tracks: Optional[str] = None):
+    def __init__(self, seed_artists: Optional[list[str]] = None, seed_genres: Optional[list[str]] = None, seed_tracks: Optional[list[str]] = None):
         self.seed_artists = seed_artists
         self.seed_genres = seed_genres
         self.seed_tracks = seed_tracks

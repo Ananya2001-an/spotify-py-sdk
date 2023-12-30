@@ -15,7 +15,7 @@ class Artists(EndpointsBase):
 
         params = EndpointsBase.params_for({"ids": id_or_ids})
         response = self.get_request(f"artists{params}")
-        return response.artists
+        return response["artists"]
 
     def albums(self, id: str, include_groups: Optional[str] = None, market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None):
         params = EndpointsBase.params_for({"include_groups": include_groups, "market": market, "limit": limit, "offset": offset})
