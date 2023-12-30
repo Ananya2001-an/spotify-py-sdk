@@ -1,7 +1,23 @@
 ## Python SDK for Spotify (Unofficial)
 
+> This library is still a work in progress.
+
 This is a Python library for the [Spotify Web API](https://developer.spotify.com/web-api/). This SDK is very simple to use if you are already familiar with the [typescript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) provided by Spotify. It takes a lot of help from there. 
 
+### Endpoints currently available
+- albums
+- artists
+- audiobooks
+- browse
+- chapters
+- episodes
+- markets
+- playlists
+- recommendations
+- search
+- shows
+- tracks
+- users
 
 ### Requirements
 
