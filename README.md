@@ -25,15 +25,7 @@ This is a Python library for the [Spotify Web API](https://developer.spotify.com
 
 ### Using this in your project
 
-```commandline
-pip install spotify-py-sdk 
-```
-
-or if using poetry
-
-```commandline
-poetry add spotify-py-sdk 
-```
+> This library is yet not published on PyPI :) if you want to test the sdk out, you can clone this repo and follow the below mentioned steps to get results back. You can make changes in the already given example file or can simply run the tests using pytest to see if everything is working well or not.
 
 ### Running the example provided
 
