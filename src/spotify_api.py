@@ -8,10 +8,20 @@ from .endpoints import *
 
 
 class SpotifyApi:
+    """Create an api instance and call the various endpoint methods.
+
+    :param client_id: Client_ID for your app
+    :type client_id: str
+    :param client_secret: Client_Secret for your app
+    :type client_secret: str
+    :param config: pass :class:`SdkConfig` instance, defaults to None
+    :type config: :class:`SdkConfig`, optional
+    """
     _root_url: str = "https://api.spotify.com/v1/"
 
-    # using client credentials auth strategy
     def __init__(self, client_id: str, client_secret: str, config: Optional[SdkConfig] = None):
+        """Constructor method
+        """
         self.access_token_manager: AccessTokenManager = AccessTokenManager(client_id, client_secret)
         self.sdk_config: Optional[SdkConfig] = config
         self.albums: Albums = Albums(self)
@@ -22,16 +32,18 @@ class SpotifyApi:
         self.episodes: Episodes = Episodes(self)
         self.recommendations: Recommendations = Recommendations(self)
         self.markets: Markets = Markets(self)
-        # self.player: Player = Player(self)
+        # self.player: Player = Player(self) # need different auth strategy; yet to be implemented
         self.playlists: Playlists = Playlists(self)
         self.shows: Shows = Shows(self)
         self.tracks: Tracks = Tracks(self)
         self.users: Users = Users(self)
         self.search: Search = Search(self)
-        # self.current_user: CurrentUser = CurrentUser(self)
+        # self.current_user: CurrentUser = CurrentUser(self) # need different auth strategy; yet to be implemented
 
     @classmethod
     def fetch_results(cls, url: str, opts: dict):
+        """Fetch results by making a request to the given URL
+        """
         try:
             result = requests.request(method=opts["method"], url=url, headers=opts["headers"], data=opts["body"])
             return result.json()
@@ -40,6 +52,8 @@ class SpotifyApi:
 
     def make_request(self, method: Literal["GET", "POST", "PUT", "DELETE"], url: str, body: Optional[any] = None,
                      content_type: Optional[str] = None):
+        """Get access token and make necessary request call to the api endpoint
+        """
         try:
             access_token = self.access_token_manager.get_access_token()
         except HTTPError as e:

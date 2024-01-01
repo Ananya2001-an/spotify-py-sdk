@@ -21,7 +21,7 @@ This is a Python library for the [Spotify Web API](https://developer.spotify.com
 
 ### Requirements
 
-- python 3.8 or higher
+- python 3.9 or higher
 
 ### Using this in your project
 
