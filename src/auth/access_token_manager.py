@@ -1,6 +1,6 @@
 import json
 import base64
-import requests
+import httpx
 from datetime import datetime, timedelta
 
 
@@ -63,7 +63,7 @@ class AccessTokenManager:
             "Content-Type": "application/x-www-form-urlencoded"
         }
         data = {"grant_type": "client_credentials"}
-        response = requests.post(url, headers=headers, data=data)
+        response = httpx.post(url, headers=headers, data=data)
         response.raise_for_status()
         response = response.json()
         new_token = response["access_token"]
