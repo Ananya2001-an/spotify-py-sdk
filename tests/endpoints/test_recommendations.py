@@ -25,9 +25,21 @@ def test_get_genres(api, get_genre_data):
 
     assert result == get_genre_data
 
+@pytest.mark.asyncio
+async def test_get_genres_async(api, get_genre_data):
+    result = await api.recommendations.genre_seeds()
+
+    assert result == get_genre_data
+
 
 def test_get_recommendations(api):
     result = api.recommendations.get(RecommendationsRequestRequiredArguments(["0oSGxfWSnnOXhD2fKuz2Gy"], ["rock"], ["0c6xIDDpzE81m2q797ordA"]))
+
+    assert len(result["tracks"]) > 0
+
+@pytest.mark.asyncio
+async def test_get_recommendations_async(api):
+    result = await api.recommendations.get(RecommendationsRequestRequiredArguments(["0oSGxfWSnnOXhD2fKuz2Gy"], ["rock"], ["0c6xIDDpzE81m2q797ordA"]))
 
     assert len(result["tracks"]) > 0
 
