@@ -1,5 +1,5 @@
 from typing import Optional, Callable, Any, Literal
-from requests import Response
+from httpx import Response
 
 
 """ Configuration types """
