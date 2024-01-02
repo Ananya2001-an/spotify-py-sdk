@@ -17,3 +17,10 @@ def test_search_track(api):
 
     assert "Katatonia" in all_mentioned_artists
 
+@pytest.mark.asyncio
+async def test_search_track(api):
+    q = "Katatonia"
+    result = await api.search.execute(q, ["artist"])
+    all_mentioned_artists: list[str] = [artist["name"] for artist in result["artists"]["items"]]
+
+    assert "Katatonia" in all_mentioned_artists
