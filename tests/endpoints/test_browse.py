@@ -4,6 +4,7 @@ import pytest
 from src import SpotifyApi
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
@@ -25,8 +26,22 @@ def test_get_categories(api):
     assert len(result["categories"]["items"]) > 0
 
 
+@pytest.mark.asyncio
+async def test_get_categories_async(api):
+    result = await api.browse.get_categories()
+
+    assert len(result["categories"]["items"]) > 0
+
+
 def test_get_category(api, get_category_data):
     result = api.browse.get_category(get_category_data["id"])
+
+    assert result == get_category_data
+
+
+@pytest.mark.asyncio
+async def test_get_category_async(api, get_category_data):
+    result = await api.browse.get_category(get_category_data["id"])
 
     assert result == get_category_data
 
@@ -37,8 +52,21 @@ def test_get_category_playlists(api, get_category_data):
     assert len(result["playlists"]["items"]) > 0
 
 
+@pytest.mark.asyncio
+async def test_get_category_playlists_async(api, get_category_data):
+    result = await api.browse.get_playlists_for_category(get_category_data["id"])
+
+    assert len(result["playlists"]["items"]) > 0
+
+
 def test_get_new_releases(api):
     result = api.browse.get_new_releases()
 
     assert len(result["albums"]["items"]) > 0
 
+
+@pytest.mark.asyncio
+async def test_get_new_releases_async(api):
+    result = await api.browse.get_new_releases()
+
+    assert len(result["albums"]["items"]) > 0
