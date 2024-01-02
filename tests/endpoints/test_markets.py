@@ -24,4 +24,8 @@ def test_get_markets(api, get_market_data):
 
     assert result == get_market_data
 
+@pytest.mark.asyncio
+async def test_get_markets_async(api, get_market_data):
+    result = await api.markets.get_available_markets()
 
+    assert result == get_market_data
