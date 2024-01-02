@@ -1,11 +1,9 @@
 import json
-import requests
 import httpx
 import asyncio
 from typing import Optional, Union, Literal
 from .auth.access_token_manager import AccessTokenManager
 from .types import *
-from requests import HTTPError
 from .endpoints import *
 
 
@@ -71,7 +69,6 @@ class SpotifyApi:
                 return response.json()
             except httpx.HTTPError as e:
                 raise Exception(f"Failed to fetch result! {e}")
-s
     @classmethod
     def fetch_results(cls, url: str, opts: dict):
         """Fetch results by making a request to the given URL"""
