@@ -2,7 +2,6 @@ import json
 import requests
 import httpx
 import asyncio
-import inspect
 from typing import Optional, Union, Literal
 from .auth.access_token_manager import AccessTokenManager
 from .types import *
@@ -88,7 +87,7 @@ s
         """
         try:
             access_token = self.access_token_manager.get_access_token()
-        except HTTPError as e:
+        except httpx.HTTPError as e:
             raise "Access Token not available! Authenticate again."
 
         full_url = SpotifyApi._root_url + url
@@ -114,8 +113,8 @@ s
                 return result
 
             return SpotifyApi.fetch_results(full_url, opts)
-        except (HTTPError, ValueError, InterruptedError) as e:
-            raise e
+        except (httpx.HTTPError, ValueError, InterruptedError) as e:
+            raise Exception(f"Error fetching {e}")
             # handled = self.sdk_config.error_handler.handleErrors(e)
             # if not handled:
             #     raise Exception("Failed to make request! Try again.")
