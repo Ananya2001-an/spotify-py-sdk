@@ -1,5 +1,8 @@
 import json
 import requests
+import httpx
+import asyncio
+import inspect
 from typing import Optional, Union, Literal
 from .auth.access_token_manager import AccessTokenManager
 from .types import *
@@ -41,14 +44,43 @@ class SpotifyApi:
         # self.current_user: CurrentUser = CurrentUser(self) # need different auth strategy; yet to be implemented
 
     @classmethod
+    async def _fetch_results_async(cls, url: str, opts: dict):
+        """async signature for Fetch results by making a request to the given URL"""
+        async with httpx.AsyncClient() as client:
+            try:
+                response = await client.request(
+                    method=opts["method"],
+                    url=url,
+                    headers=opts["headers"],
+                    data=opts["body"]
+                )
+                return response.json()
+            except httpx.HTTPError as e:
+                raise Exception(f"Failed to fetch result! {e}")
+
+    @classmethod
+    def _fetch_results_sync(cls, url: str, opts: dict):
+        """async signature for Fetch results by making a request to the given URL"""
+        with httpx.Client() as client:
+            try:
+                response = client.request(
+                    method=opts["method"],
+                    url=url,
+                    headers=opts["headers"],
+                    data=opts["body"]
+                )
+                return response.json()
+            except httpx.HTTPError as e:
+                raise Exception(f"Failed to fetch result! {e}")
+s
+    @classmethod
     def fetch_results(cls, url: str, opts: dict):
-        """Fetch results by making a request to the given URL
-        """
-        try:
-            result = requests.request(method=opts["method"], url=url, headers=opts["headers"], data=opts["body"])
-            return result.json()
-        except HTTPError as e:
-            raise f"Failed to fetch result! {e}"
+        """Fetch results by making a request to the given URL"""
+        if asyncio.get_event_loop().is_running():
+            return asyncio.ensure_future(cls._fetch_results_async(url, opts))
+        else:
+            return cls._fetch_results_sync(url, opts)
+
 
     def make_request(self, method: Literal["GET", "POST", "PUT", "DELETE"], url: str, body: Optional[any] = None,
                      content_type: Optional[str] = None):
