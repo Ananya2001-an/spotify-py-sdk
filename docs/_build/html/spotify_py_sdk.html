@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spotify_py_sdk package &mdash; spotify-py-sdk 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="spotify_py_sdk.auth package" href="spotify_py_sdk.auth.html" />
+    <link rel="prev" title="spotify_py_sdk" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            spotify-py-sdk
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">spotify_py_sdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">spotify_py_sdk package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.auth.html">spotify_py_sdk.auth package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html">spotify_py_sdk.endpoints package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotify_py_sdk.spotify_api">spotify_py_sdk.spotify_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotify_py_sdk.spotify_api.SpotifyApi"><code class="docutils literal notranslate"><span class="pre">SpotifyApi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotify_py_sdk.types">spotify_py_sdk.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotify_py_sdk.types.SdkConfig"><code class="docutils literal notranslate"><span class="pre">SdkConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotify_py_sdk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">spotify-py-sdk</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">spotify_py_sdk</a></li>
+      <li class="breadcrumb-item active">spotify_py_sdk package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/spotify_py_sdk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spotify-py-sdk-package">
+<h1>spotify_py_sdk package<a class="headerlink" href="#spotify-py-sdk-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spotify_py_sdk.auth.html">spotify_py_sdk.auth package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.auth.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.auth.html#module-spotify_py_sdk.auth.access_token_manager">spotify_py_sdk.auth.access_token_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.auth.html#spotify_py_sdk.auth.access_token_manager.AccessTokenManager"><code class="docutils literal notranslate"><span class="pre">AccessTokenManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.auth.html#spotify_py_sdk.auth.access_token_manager.AccessTokenManager.get_access_token"><code class="docutils literal notranslate"><span class="pre">AccessTokenManager.get_access_token()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.auth.html#module-spotify_py_sdk.auth">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spotify_py_sdk.endpoints.html">spotify_py_sdk.endpoints package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.albums">spotify_py_sdk.endpoints.albums module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.albums.Albums"><code class="docutils literal notranslate"><span class="pre">Albums</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.albums.Albums.get"><code class="docutils literal notranslate"><span class="pre">Albums.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.albums.Albums.tracks"><code class="docutils literal notranslate"><span class="pre">Albums.tracks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.artists">spotify_py_sdk.endpoints.artists module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.artists.Artists"><code class="docutils literal notranslate"><span class="pre">Artists</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.artists.Artists.albums"><code class="docutils literal notranslate"><span class="pre">Artists.albums()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.artists.Artists.get"><code class="docutils literal notranslate"><span class="pre">Artists.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.artists.Artists.related_artists"><code class="docutils literal notranslate"><span class="pre">Artists.related_artists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.artists.Artists.top_tracks"><code class="docutils literal notranslate"><span class="pre">Artists.top_tracks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.audiobooks">spotify_py_sdk.endpoints.audiobooks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.audiobooks.Audiobooks"><code class="docutils literal notranslate"><span class="pre">Audiobooks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.audiobooks.Audiobooks.get"><code class="docutils literal notranslate"><span class="pre">Audiobooks.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.audiobooks.Audiobooks.get_audiobook_chapters"><code class="docutils literal notranslate"><span class="pre">Audiobooks.get_audiobook_chapters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.browse">spotify_py_sdk.endpoints.browse module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse"><code class="docutils literal notranslate"><span class="pre">Browse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse.get_categories"><code class="docutils literal notranslate"><span class="pre">Browse.get_categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse.get_category"><code class="docutils literal notranslate"><span class="pre">Browse.get_category()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse.get_featured_playlists"><code class="docutils literal notranslate"><span class="pre">Browse.get_featured_playlists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse.get_new_releases"><code class="docutils literal notranslate"><span class="pre">Browse.get_new_releases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.browse.Browse.get_playlists_for_category"><code class="docutils literal notranslate"><span class="pre">Browse.get_playlists_for_category()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.chapters">spotify_py_sdk.endpoints.chapters module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.chapters.Chapters"><code class="docutils literal notranslate"><span class="pre">Chapters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.chapters.Chapters.get"><code class="docutils literal notranslate"><span class="pre">Chapters.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.current_user">spotify_py_sdk.endpoints.current_user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser"><code class="docutils literal notranslate"><span class="pre">CurrentUser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.follow_artists_or_users"><code class="docutils literal notranslate"><span class="pre">CurrentUser.follow_artists_or_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.followed_artists"><code class="docutils literal notranslate"><span class="pre">CurrentUser.followed_artists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.follows_artists_or_users"><code class="docutils literal notranslate"><span class="pre">CurrentUser.follows_artists_or_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.profile"><code class="docutils literal notranslate"><span class="pre">CurrentUser.profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.top_items"><code class="docutils literal notranslate"><span class="pre">CurrentUser.top_items()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUser.unfollow_artists_or_users"><code class="docutils literal notranslate"><span class="pre">CurrentUser.unfollow_artists_or_users()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAlbums"><code class="docutils literal notranslate"><span class="pre">CurrentUserAlbums</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAlbums.has_saved_albums"><code class="docutils literal notranslate"><span class="pre">CurrentUserAlbums.has_saved_albums()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAlbums.remove_saved_albums"><code class="docutils literal notranslate"><span class="pre">CurrentUserAlbums.remove_saved_albums()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAlbums.save_albums"><code class="docutils literal notranslate"><span class="pre">CurrentUserAlbums.save_albums()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAlbums.saved_albums"><code class="docutils literal notranslate"><span class="pre">CurrentUserAlbums.saved_albums()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAudiobooks"><code class="docutils literal notranslate"><span class="pre">CurrentUserAudiobooks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAudiobooks.has_saved_audiobooks"><code class="docutils literal notranslate"><span class="pre">CurrentUserAudiobooks.has_saved_audiobooks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAudiobooks.remove_saved_audiobooks"><code class="docutils literal notranslate"><span class="pre">CurrentUserAudiobooks.remove_saved_audiobooks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAudiobooks.save_audiobooks"><code class="docutils literal notranslate"><span class="pre">CurrentUserAudiobooks.save_audiobooks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserAudiobooks.saved_audiobooks"><code class="docutils literal notranslate"><span class="pre">CurrentUserAudiobooks.saved_audiobooks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserEpisodes"><code class="docutils literal notranslate"><span class="pre">CurrentUserEpisodes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserEpisodes.has_saved_episodes"><code class="docutils literal notranslate"><span class="pre">CurrentUserEpisodes.has_saved_episodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserEpisodes.remove_saved_episodes"><code class="docutils literal notranslate"><span class="pre">CurrentUserEpisodes.remove_saved_episodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserEpisodes.save_episodes"><code class="docutils literal notranslate"><span class="pre">CurrentUserEpisodes.save_episodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserEpisodes.saved_episodes"><code class="docutils literal notranslate"><span class="pre">CurrentUserEpisodes.saved_episodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserPlaylists"><code class="docutils literal notranslate"><span class="pre">CurrentUserPlaylists</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserPlaylists.follow"><code class="docutils literal notranslate"><span class="pre">CurrentUserPlaylists.follow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserPlaylists.is_following"><code class="docutils literal notranslate"><span class="pre">CurrentUserPlaylists.is_following()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserPlaylists.playlists"><code class="docutils literal notranslate"><span class="pre">CurrentUserPlaylists.playlists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserPlaylists.unfollow"><code class="docutils literal notranslate"><span class="pre">CurrentUserPlaylists.unfollow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserShows"><code class="docutils literal notranslate"><span class="pre">CurrentUserShows</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserShows.has_saved_show"><code class="docutils literal notranslate"><span class="pre">CurrentUserShows.has_saved_show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserShows.remove_saved_shows"><code class="docutils literal notranslate"><span class="pre">CurrentUserShows.remove_saved_shows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserShows.save_shows"><code class="docutils literal notranslate"><span class="pre">CurrentUserShows.save_shows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserShows.saved_shows"><code class="docutils literal notranslate"><span class="pre">CurrentUserShows.saved_shows()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserTracks"><code class="docutils literal notranslate"><span class="pre">CurrentUserTracks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserTracks.has_saved_tracks"><code class="docutils literal notranslate"><span class="pre">CurrentUserTracks.has_saved_tracks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserTracks.remove_saved_tracks"><code class="docutils literal notranslate"><span class="pre">CurrentUserTracks.remove_saved_tracks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserTracks.save_tracks"><code class="docutils literal notranslate"><span class="pre">CurrentUserTracks.save_tracks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.current_user.CurrentUserTracks.saved_tracks"><code class="docutils literal notranslate"><span class="pre">CurrentUserTracks.saved_tracks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.endpoints_base">spotify_py_sdk.endpoints.endpoints_base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase"><code class="docutils literal notranslate"><span class="pre">EndpointsBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase.delete_request"><code class="docutils literal notranslate"><span class="pre">EndpointsBase.delete_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase.get_request"><code class="docutils literal notranslate"><span class="pre">EndpointsBase.get_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase.params_for"><code class="docutils literal notranslate"><span class="pre">EndpointsBase.params_for()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase.post_request"><code class="docutils literal notranslate"><span class="pre">EndpointsBase.post_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.endpoints_base.EndpointsBase.put_request"><code class="docutils literal notranslate"><span class="pre">EndpointsBase.put_request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.episodes">spotify_py_sdk.endpoints.episodes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.episodes.Episodes"><code class="docutils literal notranslate"><span class="pre">Episodes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.episodes.Episodes.get"><code class="docutils literal notranslate"><span class="pre">Episodes.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.markets">spotify_py_sdk.endpoints.markets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.markets.Markets"><code class="docutils literal notranslate"><span class="pre">Markets</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.markets.Markets.get_available_markets"><code class="docutils literal notranslate"><span class="pre">Markets.get_available_markets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.player">spotify_py_sdk.endpoints.player module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.add_item_to_playback_queue"><code class="docutils literal notranslate"><span class="pre">Player.add_item_to_playback_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.get_available_devices"><code class="docutils literal notranslate"><span class="pre">Player.get_available_devices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.get_current_playing_track"><code class="docutils literal notranslate"><span class="pre">Player.get_current_playing_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.get_playback_state"><code class="docutils literal notranslate"><span class="pre">Player.get_playback_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.get_recently_played_tracks"><code class="docutils literal notranslate"><span class="pre">Player.get_recently_played_tracks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.get_users_queue"><code class="docutils literal notranslate"><span class="pre">Player.get_users_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.pause_playback"><code class="docutils literal notranslate"><span class="pre">Player.pause_playback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.seek_to_position"><code class="docutils literal notranslate"><span class="pre">Player.seek_to_position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.set_playback_volume"><code class="docutils literal notranslate"><span class="pre">Player.set_playback_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.set_repeat_mode"><code class="docutils literal notranslate"><span class="pre">Player.set_repeat_mode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.skip_to_next"><code class="docutils literal notranslate"><span class="pre">Player.skip_to_next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.skip_to_previous"><code class="docutils literal notranslate"><span class="pre">Player.skip_to_previous()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.start_resume_playback"><code class="docutils literal notranslate"><span class="pre">Player.start_resume_playback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.toggle_playback_shuffle"><code class="docutils literal notranslate"><span class="pre">Player.toggle_playback_shuffle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.Player.transfer_playback"><code class="docutils literal notranslate"><span class="pre">Player.transfer_playback()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.player.QueryRange"><code class="docutils literal notranslate"><span class="pre">QueryRange</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.playlists">spotify_py_sdk.endpoints.playlists module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.ChangePlaylistDetailsRequest"><code class="docutils literal notranslate"><span class="pre">ChangePlaylistDetailsRequest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.CreatePlaylistRequest"><code class="docutils literal notranslate"><span class="pre">CreatePlaylistRequest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists"><code class="docutils literal notranslate"><span class="pre">Playlists</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.add_custom_playlist_cover_image_from_base64_string"><code class="docutils literal notranslate"><span class="pre">Playlists.add_custom_playlist_cover_image_from_base64_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.add_items_to_playlist"><code class="docutils literal notranslate"><span class="pre">Playlists.add_items_to_playlist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.change_playlist_details"><code class="docutils literal notranslate"><span class="pre">Playlists.change_playlist_details()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.create_playlist"><code class="docutils literal notranslate"><span class="pre">Playlists.create_playlist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.get_playlist"><code class="docutils literal notranslate"><span class="pre">Playlists.get_playlist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.get_playlist_cover_image"><code class="docutils literal notranslate"><span class="pre">Playlists.get_playlist_cover_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.get_playlist_items"><code class="docutils literal notranslate"><span class="pre">Playlists.get_playlist_items()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.get_users_playlists"><code class="docutils literal notranslate"><span class="pre">Playlists.get_users_playlists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.move_playlist_items"><code class="docutils literal notranslate"><span class="pre">Playlists.move_playlist_items()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.remove_items_from_playlist"><code class="docutils literal notranslate"><span class="pre">Playlists.remove_items_from_playlist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.Playlists.update_playlist_items"><code class="docutils literal notranslate"><span class="pre">Playlists.update_playlist_items()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.RemovePlaylistItemsRequest"><code class="docutils literal notranslate"><span class="pre">RemovePlaylistItemsRequest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.playlists.UpdatePlaylistItemsRequest"><code class="docutils literal notranslate"><span class="pre">UpdatePlaylistItemsRequest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.recommendations">spotify_py_sdk.endpoints.recommendations module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.RecommendationSeed"><code class="docutils literal notranslate"><span class="pre">RecommendationSeed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.Recommendations"><code class="docutils literal notranslate"><span class="pre">Recommendations</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.Recommendations.genre_seeds"><code class="docutils literal notranslate"><span class="pre">Recommendations.genre_seeds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.Recommendations.get"><code class="docutils literal notranslate"><span class="pre">Recommendations.get()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.RecommendationsRequest"><code class="docutils literal notranslate"><span class="pre">RecommendationsRequest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.RecommendationsRequestRequiredArguments"><code class="docutils literal notranslate"><span class="pre">RecommendationsRequestRequiredArguments</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.recommendations.RecommendationsResponse"><code class="docutils literal notranslate"><span class="pre">RecommendationsResponse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.search">spotify_py_sdk.endpoints.search module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.search.Search"><code class="docutils literal notranslate"><span class="pre">Search</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.search.Search.execute"><code class="docutils literal notranslate"><span class="pre">Search.execute()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.shows">spotify_py_sdk.endpoints.shows module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.shows.Shows"><code class="docutils literal notranslate"><span class="pre">Shows</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.shows.Shows.episodes"><code class="docutils literal notranslate"><span class="pre">Shows.episodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.shows.Shows.get"><code class="docutils literal notranslate"><span class="pre">Shows.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.tracks">spotify_py_sdk.endpoints.tracks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.tracks.Tracks"><code class="docutils literal notranslate"><span class="pre">Tracks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.tracks.Tracks.audio_analysis"><code class="docutils literal notranslate"><span class="pre">Tracks.audio_analysis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.tracks.Tracks.audio_features"><code class="docutils literal notranslate"><span class="pre">Tracks.audio_features()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.tracks.Tracks.get"><code class="docutils literal notranslate"><span class="pre">Tracks.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints.users">spotify_py_sdk.endpoints.users module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.users.Users"><code class="docutils literal notranslate"><span class="pre">Users</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotify_py_sdk.endpoints.html#spotify_py_sdk.endpoints.users.Users.profile"><code class="docutils literal notranslate"><span class="pre">Users.profile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spotify_py_sdk.endpoints.html#module-spotify_py_sdk.endpoints">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-spotify_py_sdk.spotify_api">
+<span id="spotify-py-sdk-spotify-api-module"></span><h2>spotify_py_sdk.spotify_api module<a class="headerlink" href="#module-spotify_py_sdk.spotify_api" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spotify_py_sdk.spotify_api.SpotifyApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spotify_py_sdk.spotify_api.</span></span><span class="sig-name descname"><span class="pre">SpotifyApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spotify_py_sdk.types.SdkConfig" title="spotify_py_sdk.types.SdkConfig"><span class="pre">SdkConfig</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotify_py_sdk/spotify_api.html#SpotifyApi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotify_py_sdk.spotify_api.SpotifyApi" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create an api instance and call the various endpoint methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>str</em>) – Client_ID for your app</p></li>
+<li><p><strong>client_secret</strong> (<em>str</em>) – Client_Secret for your app</p></li>
+<li><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SdkConfig</span></code>, optional) – pass <code class="xref py py-class docutils literal notranslate"><span class="pre">SdkConfig</span></code> instance, defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="spotify_py_sdk.spotify_api.SpotifyApi.fetch_results">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fetch_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotify_py_sdk/spotify_api.html#SpotifyApi.fetch_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotify_py_sdk.spotify_api.SpotifyApi.fetch_results" title="Link to this definition"></a></dt>
+<dd><p>Fetch results by making a request to the given URL</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spotify_py_sdk.spotify_api.SpotifyApi.make_request">
+<span class="sig-name descname"><span class="pre">make_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'GET'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'POST'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'PUT'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'DELETE'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotify_py_sdk/spotify_api.html#SpotifyApi.make_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotify_py_sdk.spotify_api.SpotifyApi.make_request" title="Link to this definition"></a></dt>
+<dd><p>Get access token and make necessary request call to the api endpoint</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-spotify_py_sdk.types">
+<span id="spotify-py-sdk-types-module"></span><h2>spotify_py_sdk.types module<a class="headerlink" href="#module-spotify_py_sdk.types" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spotify_py_sdk.types.SdkConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spotify_py_sdk.types.</span></span><span class="sig-name descname"><span class="pre">SdkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fetch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Response</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">before_request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after_request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Response</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotify_py_sdk/types.html#SdkConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotify_py_sdk.types.SdkConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-spotify_py_sdk">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-spotify_py_sdk" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="spotify_py_sdk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="spotify_py_sdk.auth.html" class="btn btn-neutral float-right" title="spotify_py_sdk.auth package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ananya Nayak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

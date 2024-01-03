@@ -1,5 +1,5 @@
 import pytest
-from src.endpoints.endpoints_base import EndpointsBase
+from spotify_py_sdk.endpoints.endpoints_base import EndpointsBase
 
 
 def test_params_for_omits_none():

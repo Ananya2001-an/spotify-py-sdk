@@ -1,7 +1,7 @@
-src
-===
+spotify_py_sdk
+==============
 
 .. toctree::
    :maxdepth: 4
 
-   src
+   spotify_py_sdk

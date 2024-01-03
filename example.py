@@ -1,6 +1,6 @@
 import os
 
-from src import SpotifyApi, SdkConfig
+from spotify_py_sdk import SpotifyApi, SdkConfig
 from dotenv import load_dotenv
 load_dotenv()
 

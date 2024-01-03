@@ -1,8 +1,8 @@
 import json
 
 import pytest
-from src import SpotifyApi
-from src.endpoints.recommendations import RecommendationsRequestRequiredArguments
+from spotify_py_sdk import SpotifyApi
+from spotify_py_sdk.endpoints.recommendations import RecommendationsRequestRequiredArguments
 import os
 from dotenv import load_dotenv
 load_dotenv()

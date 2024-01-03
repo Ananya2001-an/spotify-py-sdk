@@ -1,5 +1,5 @@
 import pytest
-from src import SpotifyApi
+from spotify_py_sdk import SpotifyApi
 import os
 from dotenv import load_dotenv
 load_dotenv()

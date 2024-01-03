@@ -9,8 +9,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('..'))
-import src.auth
-import src.endpoints
+import spotify_py_sdk.auth
+import spotify_py_sdk.endpoints
 
 project = 'spotify-py-sdk'
 copyright = '2024, Ananya Nayak'
@@ -23,12 +23,11 @@ release = '0.1.0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 
 # -- Options for HTML output -------------------------------------------------
