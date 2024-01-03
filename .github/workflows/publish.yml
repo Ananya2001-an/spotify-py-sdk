@@ -21,7 +21,7 @@ jobs:
       run: |
         python3 -m pip install build --user
     - name: Build a binary wheel and a source tarball
-      run: python3 -m build
+      run: python3 -m build src
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
@@ -29,8 +29,7 @@ jobs:
         path: dist/
 
   publish-to-pypi:
-    name: >-
-      Publish Python 🐍 distribution 📦 to PyPI
+    name: Publish Python 🐍 distribution 📦 to PyPI
     needs:
     - build
     runs-on: ubuntu-latest
