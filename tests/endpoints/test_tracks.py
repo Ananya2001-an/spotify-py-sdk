@@ -4,6 +4,7 @@ import pytest
 from src import SpotifyApi
 import os
 from dotenv import load_dotenv
+import asyncio
 load_dotenv()
 
 
@@ -24,9 +25,22 @@ def test_get_tracks_single_item(api, get_track_data):
 
     assert result["id"] == get_track_data["id"]
 
+@pytest.mark.asyncio
+async def test_get_tracks_single_item_async(api, get_track_data):
+    result = await api.tracks.get(get_track_data["id"])
+
+    assert result["id"] == get_track_data["id"]
 
 def test_get_tracks_multiple_items(api, get_track_data):
     result = api.tracks.get([get_track_data["id"], get_track_data["id"]])
+
+    assert len(result) == 2
+    assert result[0]["id"] == get_track_data["id"]
+    assert result[1]["id"] == get_track_data["id"]
+
+@pytest.mark.asyncio
+async def test_get_tracks_multiple_items_async(api, get_track_data):
+    result = await api.tracks.get([get_track_data["id"], get_track_data["id"]])
 
     assert len(result) == 2
     assert result[0]["id"] == get_track_data["id"]
@@ -38,9 +52,23 @@ def test_get_tracks_audio_features(api, get_track_data):
 
     assert result["id"] == get_track_data["id"]
 
+@pytest.mark.asyncio
+async def test_get_tracks_audio_features_async(api, get_track_data):
+    result = await api.tracks.audio_features(get_track_data["id"])
+
+    assert result["id"] == get_track_data["id"]
+
 
 def test_get_tracks_audio_features_multiple_items(api, get_track_data):
     result = api.tracks.audio_features([get_track_data["id"], get_track_data["id"]])
+
+    assert len(result) == 2
+    assert result[0]["id"] == get_track_data["id"]
+    assert result[1]["id"] == get_track_data["id"]
+
+@pytest.mark.asyncio
+async def test_get_tracks_audio_features_multiple_items_async(api, get_track_data):
+    result = await api.tracks.audio_features([get_track_data["id"], get_track_data["id"]])
 
     assert len(result) == 2
     assert result[0]["id"] == get_track_data["id"]
@@ -52,3 +80,8 @@ def test_get_tracks_audio_analysis(api, get_track_data):
 
     assert result["track"]["tempo"] > 0
 
+@pytest.mark.asyncio
+async def test_get_tracks_audio_analysis_async(api, get_track_data):
+    result = await api.tracks.audio_analysis(get_track_data["id"])
+
+    assert result["track"]["tempo"] > 0
