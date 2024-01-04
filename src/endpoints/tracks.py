@@ -9,7 +9,9 @@ class Tracks(EndpointsBase):
     def __init__(self, api):
         super().__init__(api)
 
-    async def _get_async(self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None):
+    async def _get_async(
+        self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None
+    ):
         if type(id_or_ids) is str:
             params = EndpointsBase.params_for({"market": market})
             return await self.get_request(f"tracks/{id_or_ids}{params}")
@@ -18,7 +20,9 @@ class Tracks(EndpointsBase):
         response = await self.get_request(f"tracks{params}")
         return response["tracks"]
 
-    def _get_sync(self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None):
+    def _get_sync(
+        self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None
+    ):
         if type(id_or_ids) is str:
             params = EndpointsBase.params_for({"market": market})
             return self.get_request(f"tracks/{id_or_ids}{params}")

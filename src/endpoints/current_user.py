@@ -3,11 +3,10 @@ from src.types import *
 
 
 class CurrentUser(EndpointsBase):
-    """Get current user info. Make calls to me api endpoint.
-    """
+    """Get current user info. Make calls to me api endpoint."""
+
     def __init__(self, api):
-        """Constructor method
-        """
+        """Constructor method"""
         super().__init__(api)
         self.albums = CurrentUserAlbums(api)
         self.audiobooks = CurrentUserAudiobooks(api)
@@ -17,22 +16,32 @@ class CurrentUser(EndpointsBase):
         self.tracks = CurrentUserTracks(api)
 
     def profile(self):
-        """Get profile of the current user
-        """
+        """Get profile of the current user"""
         return self.get_request("me")
 
-    def top_items(self, type: Literal["artists", "tracks"], time_range: Optional[Literal["short_term", "medium_term", "long_term"]] = None, limit: Optional[int] = None, offset: Optional[int] = None):
+    def top_items(
+        self,
+        type: Literal["artists", "tracks"],
+        time_range: Optional[Literal["short_term", "medium_term", "long_term"]] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Get top items of the current user
 
         :param type: pass a type from ["artists", "tracks"]
         """
-        params = EndpointsBase.params_for({"time_range": time_range, "limit": limit, "offset": offset})
+        params = EndpointsBase.params_for(
+            {"time_range": time_range, "limit": limit, "offset": offset}
+        )
         return self.get_request(f"me/top/{type}{params}")
 
-    def followed_artists(self, after: Optional[str] = None, limit: Optional[int] = None):
-        """Get artists followed by the current user
-        """
-        params = EndpointsBase.params_for({"type": "artist", "after": after, "limit": limit})
+    def followed_artists(
+        self, after: Optional[str] = None, limit: Optional[int] = None
+    ):
+        """Get artists followed by the current user"""
+        params = EndpointsBase.params_for(
+            {"type": "artist", "after": after, "limit": limit}
+        )
         return self.get_request(f"me/following{params}")
 
     def follow_artists_or_users(self, ids: list[str], type: Literal["artist", "user"]):
@@ -44,7 +53,9 @@ class CurrentUser(EndpointsBase):
         params = EndpointsBase.params_for({"type": type})
         self.put_request(f"me/following{params}", {"ids": ids})
 
-    def unfollow_artists_or_users(self, ids: list[str], type: Literal["artist", "user"]):
+    def unfollow_artists_or_users(
+        self, ids: list[str], type: Literal["artist", "user"]
+    ):
         """Unfollow artist or user
 
         :param ids: pass list of ids
@@ -64,12 +75,18 @@ class CurrentUser(EndpointsBase):
 
 
 class CurrentUserAlbums(EndpointsBase):
-    """Has methods for albums of the current user
-    """
-    def saved_albums(self, limit: Optional[int] = None, offset: Optional[int] = None, market: Optional[MARKET] = None):
-        """Get all saved albums of the current user
-        """
-        params = EndpointsBase.params_for({"limit": limit, "offset": offset, "market": market})
+    """Has methods for albums of the current user"""
+
+    def saved_albums(
+        self,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+        market: Optional[MARKET] = None,
+    ):
+        """Get all saved albums of the current user"""
+        params = EndpointsBase.params_for(
+            {"limit": limit, "offset": offset, "market": market}
+        )
         return self.get_request(f"me/albums{params}")
 
     def save_albums(self, ids: list[str]):
@@ -96,11 +113,12 @@ class CurrentUserAlbums(EndpointsBase):
 
 
 class CurrentUserAudiobooks(EndpointsBase):
-    """Has methods for audiobooks of the current user
-    """
-    def saved_audiobooks(self, limit: Optional[int] = None, offset: Optional[int] = None):
-        """Get all saved audiobooks of the current user
-        """
+    """Has methods for audiobooks of the current user"""
+
+    def saved_audiobooks(
+        self, limit: Optional[int] = None, offset: Optional[int] = None
+    ):
+        """Get all saved audiobooks of the current user"""
         params = EndpointsBase.params_for({"limit": limit, "offset": offset})
         return self.get_request(f"me/audiobooks{params}")
 
@@ -128,12 +146,18 @@ class CurrentUserAudiobooks(EndpointsBase):
 
 
 class CurrentUserEpisodes(EndpointsBase):
-    """Has methods for episodes of the current user
-    """
-    def saved_episodes(self, market: Optional[MARKET] = None, limit: Optional[int] = None, offset: Optional[int] = None):
-        """Get all saved episodes of the current user
-        """
-        params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})
+    """Has methods for episodes of the current user"""
+
+    def saved_episodes(
+        self,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
+        """Get all saved episodes of the current user"""
+        params = EndpointsBase.params_for(
+            {"market": market, "limit": limit, "offset": offset}
+        )
         return self.get_request(f"me/episodes{params}")
 
     def save_episodes(self, ids: list[str]):
@@ -160,11 +184,10 @@ class CurrentUserEpisodes(EndpointsBase):
 
 
 class CurrentUserPlaylists(EndpointsBase):
-    """Has methods for playlists of the current user
-    """
+    """Has methods for playlists of the current user"""
+
     def playlists(self, limit: Optional[int] = None, offset: Optional[int] = None):
-        """Get playlists of the current user
-        """
+        """Get playlists of the current user"""
         params = EndpointsBase.params_for({"limit": limit, "offset": offset})
         return self.get_request(f"me/playlists{params}")
 
@@ -194,12 +217,11 @@ class CurrentUserPlaylists(EndpointsBase):
 
 
 class CurrentUserShows(EndpointsBase):
-    """Has methods for shows of the current user
-    """
+    """Has methods for shows of the current user"""
+
     def saved_shows(self, limit: Optional[int] = None, offset: Optional[int] = None):
-        """Get all saved shows of the current user
-        """
-        params = EndpointsBase.params_for({ "limit": limit, "offset": offset })
+        """Get all saved shows of the current user"""
+        params = EndpointsBase.params_for({"limit": limit, "offset": offset})
         return self.get_request(f"me/shows{params}")
 
     def save_shows(self, ids: list[str]):
@@ -228,12 +250,18 @@ class CurrentUserShows(EndpointsBase):
 
 
 class CurrentUserTracks(EndpointsBase):
-    """Has methods for tracks of the current user
-    """
-    def saved_tracks(self, limit: Optional[int] = None, offset: Optional[int] = None, market: Optional[MARKET] = None):
-        """Get all saved tracks of the current user
-        """
-        params = EndpointsBase.params_for({"limit": limit, "offset": offset, "market": market })
+    """Has methods for tracks of the current user"""
+
+    def saved_tracks(
+        self,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+        market: Optional[MARKET] = None,
+    ):
+        """Get all saved tracks of the current user"""
+        params = EndpointsBase.params_for(
+            {"limit": limit, "offset": offset, "market": market}
+        )
         return self.get_request(f"me/tracks{params}")
 
     def save_tracks(self, ids: list[str]):

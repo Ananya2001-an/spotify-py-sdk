@@ -3,8 +3,8 @@ from urllib.parse import urlencode
 
 
 class EndpointsBase:
-    """Base class for all endpoint classes
-    """
+    """Base class for all endpoint classes"""
+
     def __init__(self, api):
         """Constructor method
 
@@ -29,23 +29,21 @@ class EndpointsBase:
         return f"?{urlencode(args)}" if args != {} else ""
 
     def get_request(self, url: str):
-        """Make a GET request to the endpoint
-        """
+        """Make a GET request to the endpoint"""
         return self.api.make_request("GET", url)
 
-    def post_request(self, url: str, body: Optional[Any] = None, content_type: Optional[str] = None):
-        """Make a POST request to the endpoint
-        """
+    def post_request(
+        self, url: str, body: Optional[Any] = None, content_type: Optional[str] = None
+    ):
+        """Make a POST request to the endpoint"""
         return self.api.make_request("POST", url, body, content_type)
 
-    def put_request(self, url: str, body: Optional[Any] = None, content_type: Optional[str] = None):
-        """Make a PUT request to the endpoint
-        """
+    def put_request(
+        self, url: str, body: Optional[Any] = None, content_type: Optional[str] = None
+    ):
+        """Make a PUT request to the endpoint"""
         return self.api.make_request("PUT", url, body, content_type)
 
     def delete_request(self, url: str, body: Optional[Any] = None):
-        """Make a DELETE request to the endpoint
-        """
+        """Make a DELETE request to the endpoint"""
         return self.api.make_request("DELETE", url, body)
-
-

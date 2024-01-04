@@ -5,11 +5,10 @@ import asyncio
 
 
 class Artists(EndpointsBase):
-    """Make calls to the Artists api endpoint
-    """
+    """Make calls to the Artists api endpoint"""
+
     def __init__(self, api):
-        """Constructor method
-        """
+        """Constructor method"""
         super().__init__(api)
 
     async def _get_async(self, id_or_ids: Union[str, list[str]]):
@@ -39,25 +38,57 @@ class Artists(EndpointsBase):
         else:
             return self._get_sync(id_or_ids)
 
-    async def _albums_async(self, id: str, include_groups: Optional[str] = None, market: Optional[MARKET] = None,
-                            limit: Optional[int] = None, offset: Optional[int] = None):
+    async def _albums_async(
+        self,
+        id: str,
+        include_groups: Optional[str] = None,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Asynchronously get albums of an artist"""
         params = EndpointsBase.params_for(
-            {"include_groups": include_groups, "market": market, "limit": limit, "offset": offset})
+            {
+                "include_groups": include_groups,
+                "market": market,
+                "limit": limit,
+                "offset": offset,
+            }
+        )
         return await self.get_request(f"artists/{id}/albums{params}")
 
-    def _albums_sync(self, id: str, include_groups: Optional[str] = None, market: Optional[MARKET] = None,
-                     limit: Optional[int] = None, offset: Optional[int] = None):
+    def _albums_sync(
+        self,
+        id: str,
+        include_groups: Optional[str] = None,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Synchronously get albums of an artist"""
         params = EndpointsBase.params_for(
-            {"include_groups": include_groups, "market": market, "limit": limit, "offset": offset})
+            {
+                "include_groups": include_groups,
+                "market": market,
+                "limit": limit,
+                "offset": offset,
+            }
+        )
         return self.get_request(f"artists/{id}/albums{params}")
 
-    def albums(self, id: str, include_groups: Optional[str] = None, market: Optional[MARKET] = None,
-               limit: Optional[int] = None, offset: Optional[int] = None):
+    def albums(
+        self,
+        id: str,
+        include_groups: Optional[str] = None,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Get albums of an artist"""
         if asyncio.get_event_loop().is_running():
-            return asyncio.ensure_future(self._albums_async(id, include_groups, market, limit, offset))
+            return asyncio.ensure_future(
+                self._albums_async(id, include_groups, market, limit, offset)
+            )
         else:
             return self._albums_sync(id, include_groups, market, limit, offset)
 

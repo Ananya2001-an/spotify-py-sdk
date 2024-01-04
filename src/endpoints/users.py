@@ -8,4 +8,3 @@ class Users(EndpointsBase):
 
     def profile(self, user_id: str):
         return self.get_request(f"users/{user_id}")
-

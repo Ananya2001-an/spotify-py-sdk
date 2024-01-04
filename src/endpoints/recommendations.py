@@ -5,7 +5,12 @@ from src.types import *
 
 
 class RecommendationsRequestRequiredArguments:
-    def __init__(self, seed_artists: Optional[list[str]] = None, seed_genres: Optional[list[str]] = None, seed_tracks: Optional[list[str]] = None):
+    def __init__(
+        self,
+        seed_artists: Optional[list[str]] = None,
+        seed_genres: Optional[list[str]] = None,
+        seed_tracks: Optional[list[str]] = None,
+    ):
         self.seed_artists = seed_artists
         self.seed_genres = seed_genres
         self.seed_tracks = seed_tracks
@@ -16,10 +21,18 @@ class RecommendationsRequest(RecommendationsRequestRequiredArguments):
         # TODO
         super().__init__()
         pass
-    
-    
+
+
 class RecommendationSeed:
-    def __init__(self, id: str, href: str, type: str, initial_pool_size: int, after_filtering_size: int, after_relinking_size: int):
+    def __init__(
+        self,
+        id: str,
+        href: str,
+        type: str,
+        initial_pool_size: int,
+        after_filtering_size: int,
+        after_relinking_size: int,
+    ):
         self.id = id
         self.href = href
         self.type = type
@@ -38,7 +51,10 @@ class Recommendations(EndpointsBase):
     def __init__(self, api):
         super().__init__(api)
 
-    def get(self, request: Union[RecommendationsRequestRequiredArguments, RecommendationsRequest]):
+    def get(
+        self,
+        request: Union[RecommendationsRequestRequiredArguments, RecommendationsRequest],
+    ):
         param_obj = {}
         for prop, value in request.__dict__.items():
             param_obj[prop] = value
@@ -47,4 +63,3 @@ class Recommendations(EndpointsBase):
 
     def genre_seeds(self):
         return self.get_request("recommendations/available-genre-seeds")
-

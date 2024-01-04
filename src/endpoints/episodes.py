@@ -4,20 +4,20 @@ from .endpoints_base import EndpointsBase
 from src.types import *
 import asyncio
 
+
 class Episodes(EndpointsBase):
-    """Make calls to the episodes endpoint.
-    """
+    """Make calls to the episodes endpoint."""
+
     def __init__(self, api):
-        """Constructor method
-        """
+        """Constructor method"""
         super().__init__(api)
 
     async def _get_async(self, id_or_ids: Union[str, list[str]], market: MARKET):
-        """ async Get episodes by ids
+        """async Get episodes by ids
 
-                :param id_or_ids: pass single id or a list of ids
-                :param market: pass market area like "GB"
-                """
+        :param id_or_ids: pass single id or a list of ids
+        :param market: pass market area like "GB"
+        """
         if type(id_or_ids) is str:
             params = EndpointsBase.params_for({"market": market})
             album = await self.get_request(f"episodes/{id_or_ids}{params}")
@@ -28,11 +28,11 @@ class Episodes(EndpointsBase):
         return response["episodes"]
 
     def _get_sync(self, id_or_ids: Union[str, list[str]], market: MARKET):
-        """ sync Get episodes by ids
+        """sync Get episodes by ids
 
-                :param id_or_ids: pass single id or a list of ids
-                :param market: pass market area like "GB"
-                """
+        :param id_or_ids: pass single id or a list of ids
+        :param market: pass market area like "GB"
+        """
         if type(id_or_ids) is str:
             params = EndpointsBase.params_for({"market": market})
             album = self.get_request(f"episodes/{id_or_ids}{params}")
@@ -41,6 +41,7 @@ class Episodes(EndpointsBase):
         params = EndpointsBase.params_for({"ids": id_or_ids, "market": market})
         response = self.get_request(f"episodes{params}")
         return response["episodes"]
+
     def get(self, id_or_ids: Union[str, list[str]], market: MARKET):
         """Get episodes by ids
 
@@ -51,4 +52,3 @@ class Episodes(EndpointsBase):
             return asyncio.ensure_future(self._get_async(id_or_ids, market))
         else:
             return self._get_sync(id_or_ids, market)
-

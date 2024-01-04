@@ -3,16 +3,17 @@ from typing import Optional, Union
 from src.types import *
 import asyncio
 
+
 class Albums(EndpointsBase):
-    """Make calls to the Albums api endpoint
-    """
+    """Make calls to the Albums api endpoint"""
 
     def __init__(self, api):
-        """Constructor method
-        """
+        """Constructor method"""
         super().__init__(api)
 
-    def _get_sync(self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None):
+    def _get_sync(
+        self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None
+    ):
         """Get albums by providing album id
 
         :param id_or_ids: pass a single id or a list of ids
@@ -26,7 +27,9 @@ class Albums(EndpointsBase):
         response = self.get_request(f"albums{params}")
         return response["albums"]
 
-    async def _get_async(self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None):
+    async def _get_async(
+        self, id_or_ids: Union[str, list[str]], market: Optional[MARKET] = None
+    ):
         """Get albums by providing album id
 
         :param id_or_ids: pass a single id or a list of ids
@@ -50,26 +53,46 @@ class Albums(EndpointsBase):
         else:
             return self._get_sync(id_or_ids, market)
 
-    def _tracks_sync(self, album_id: str, market: Optional[MARKET] = None,
-                     limit: Optional[int] = None, offset: Optional[int] = None):
+    def _tracks_sync(
+        self,
+        album_id: str,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Synchronously get tracks for the given Album"""
-        params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})
+        params = EndpointsBase.params_for(
+            {"market": market, "limit": limit, "offset": offset}
+        )
         return self.get_request(f"albums/{album_id}/tracks{params}")
 
-    async def _tracks_async(self, album_id: str, market: Optional[MARKET] = None,
-                            limit: Optional[int] = None, offset: Optional[int] = None):
+    async def _tracks_async(
+        self,
+        album_id: str,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """Asynchronously get tracks for the given Album"""
-        params = EndpointsBase.params_for({"market": market, "limit": limit, "offset": offset})
+        params = EndpointsBase.params_for(
+            {"market": market, "limit": limit, "offset": offset}
+        )
         return await self.get_request(f"albums/{album_id}/tracks{params}")
 
-    def tracks(self, album_id: str, market: Optional[MARKET] = None,
-               limit: Optional[int] = None, offset: Optional[int] = None):
+    def tracks(
+        self,
+        album_id: str,
+        market: Optional[MARKET] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+    ):
         """
         Get tracks for the given Album. Determines if the call should be async or sync.
         :param album_id: pass album id
         """
         if asyncio.get_event_loop().is_running():
-            return asyncio.ensure_future(self._tracks_async(album_id, market, limit, offset))
+            return asyncio.ensure_future(
+                self._tracks_async(album_id, market, limit, offset)
+            )
         else:
             return self._tracks_sync(album_id, market, limit, offset)
-

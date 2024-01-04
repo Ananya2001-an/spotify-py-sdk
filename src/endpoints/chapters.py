@@ -4,15 +4,17 @@ from .endpoints_base import EndpointsBase
 from src.types import *
 import asyncio
 
+
 class Chapters(EndpointsBase):
-    """Make calls to the chapters api endpoint
-    """
+    """Make calls to the chapters api endpoint"""
+
     def __init__(self, api):
-        """Constructor method
-        """
+        """Constructor method"""
         super().__init__(api)
 
-    async def _get_async(self, id_or_ids: Union[str, list[str]], market: CHAPTER_MARKET):
+    async def _get_async(
+        self, id_or_ids: Union[str, list[str]], market: CHAPTER_MARKET
+    ):
         """Asynchronously get chapters"""
         if isinstance(id_or_ids, str):
             params = EndpointsBase.params_for({"market": market})
@@ -38,5 +40,3 @@ class Chapters(EndpointsBase):
             return asyncio.ensure_future(self._get_async(id_or_ids, market))
         else:
             return self._get_sync(id_or_ids, market)
-
-

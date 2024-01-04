@@ -17,12 +17,16 @@ class SpotifyApi:
     :param config: pass :class:`SdkConfig` instance, defaults to None
     :type config: :class:`SdkConfig`, optional
     """
+
     _root_url: str = "https://api.spotify.com/v1/"
 
-    def __init__(self, client_id: str, client_secret: str, config: Optional[SdkConfig] = None):
-        """Constructor method
-        """
-        self.access_token_manager: AccessTokenManager = AccessTokenManager(client_id, client_secret)
+    def __init__(
+        self, client_id: str, client_secret: str, config: Optional[SdkConfig] = None
+    ):
+        """Constructor method"""
+        self.access_token_manager: AccessTokenManager = AccessTokenManager(
+            client_id, client_secret
+        )
         self.sdk_config: Optional[SdkConfig] = config
         self.albums: Albums = Albums(self)
         self.artists: Artists = Artists(self)
@@ -49,7 +53,7 @@ class SpotifyApi:
                     method=opts["method"],
                     url=url,
                     headers=opts["headers"],
-                    data=opts["body"]
+                    data=opts["body"],
                 )
                 return response.json()
             except httpx.HTTPError as e:
@@ -64,11 +68,12 @@ class SpotifyApi:
                     method=opts["method"],
                     url=url,
                     headers=opts["headers"],
-                    data=opts["body"]
+                    data=opts["body"],
                 )
                 return response.json()
             except httpx.HTTPError as e:
                 raise Exception(f"Failed to fetch result! {e}")
+
     @classmethod
     def fetch_results(cls, url: str, opts: dict):
         """Fetch results by making a request to the given URL"""
@@ -77,11 +82,14 @@ class SpotifyApi:
         else:
             return cls._fetch_results_sync(url, opts)
 
-
-    def make_request(self, method: Literal["GET", "POST", "PUT", "DELETE"], url: str, body: Optional[any] = None,
-                     content_type: Optional[str] = None):
-        """Get access token and make necessary request call to the api endpoint
-        """
+    def make_request(
+        self,
+        method: Literal["GET", "POST", "PUT", "DELETE"],
+        url: str,
+        body: Optional[any] = None,
+        content_type: Optional[str] = None,
+    ):
+        """Get access token and make necessary request call to the api endpoint"""
         try:
             access_token = self.access_token_manager.get_access_token()
         except httpx.HTTPError as e:
@@ -92,9 +100,9 @@ class SpotifyApi:
             "method": method,
             "headers": {
                 "Authorization": f"Bearer {access_token}",
-                "Content-Type": content_type if content_type else "application/json"
+                "Content-Type": content_type if content_type else "application/json",
             },
-            "body": json.dumps(body) if body and type(body) is not str else body
+            "body": json.dumps(body) if body and type(body) is not str else body,
         }
 
         try:
@@ -115,4 +123,3 @@ class SpotifyApi:
             # handled = self.sdk_config.error_handler.handleErrors(e)
             # if not handled:
             #     raise Exception("Failed to make request! Try again.")
-
