@@ -4,6 +4,8 @@ import pytest
 from src import SpotifyApi
 import os
 from dotenv import load_dotenv
+import asyncio
+
 load_dotenv()
 
 
@@ -31,9 +33,22 @@ def test_get_playlist(api, get_playlist_data):
 
     assert len(result["tracks"]["items"]) > 0
 
+@pytest.mark.asyncio
+async def test_get_playlist_async(api, get_playlist_data):
+    result = await api.playlists.get_playlist(get_playlist_data["id"])
+
+    assert len(result["tracks"]["items"]) > 0
+
 
 def test_get_playlist_with_additional_types(api, get_playlist_data):
     result = api.playlists.get_playlist(playlist_id=get_playlist_data["id"], additional_types=["episode"])
+
+    assert len(result["tracks"]["items"]) > 0
+
+
+@pytest.mark.asyncio
+async def test_get_playlist_with_additional_types_async(api, get_playlist_data):
+    result = await api.playlists.get_playlist(playlist_id=get_playlist_data["id"], additional_types=["episode"])
 
     assert len(result["tracks"]["items"]) > 0
 
@@ -44,8 +59,24 @@ def test_get_playlist_items(api, get_playlist_data):
     assert len(result["items"]) > 0
 
 
+@pytest.mark.asyncio
+async def test_get_playlist_items_async(api, get_playlist_data):
+    result = await api.playlists.get_playlist_items(get_playlist_data["id"])
+
+    assert len(result["items"]) > 0
+
+
 def test_get_playlist_items_with_additional_types(api, get_playlist_data):
-    result = api.playlists.get_playlist_items(playlist_id=get_playlist_data["id"], limit=1, offset=0, additional_types=["episode"])
+    result = api.playlists.get_playlist_items(playlist_id=get_playlist_data["id"], limit=1, offset=0,
+                                              additional_types=["episode"])
+
+    assert len(result["items"]) > 0
+
+
+@pytest.mark.asyncio
+async def test_get_playlist_items_with_additional_types_async(api, get_playlist_data):
+    result = await api.playlists.get_playlist_items(playlist_id=get_playlist_data["id"], limit=1, offset=0,
+                                                    additional_types=["episode"])
 
     assert len(result["items"]) > 0
 
@@ -56,9 +87,23 @@ def test_get_user_playlists(api, get_user_data):
     assert len(result["items"]) > 0
 
 
+@pytest.mark.asyncio
+async def test_get_user_playlists_async(api, get_user_data):
+    result = await api.playlists.get_users_playlists(get_user_data["id"])
+
+    assert len(result["items"]) > 0
+
+
 def test_get_playlist_cover_image(api):
     playlist_id = "37i9dQZF1DWXIcbzpLauPS"
     result = api.playlists.get_playlist_cover_image(playlist_id)
 
     assert len(result[0]["url"]) > 0
 
+
+@pytest.mark.asyncio
+async def test_get_playlist_cover_image_async(api):
+    playlist_id = "37i9dQZF1DWXIcbzpLauPS"
+    result = await api.playlists.get_playlist_cover_image(playlist_id)
+
+    assert len(result[0]["url"]) > 0
