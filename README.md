@@ -1,4 +1,5 @@
 ## Python SDK for Spotify Web API
+[![Downloads](https://static.pepy.tech/badge/spotify-py-sdk)](https://pepy.tech/project/spotify-py-sdk)
 
 > This library is still a work in progress.
 
